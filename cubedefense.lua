@@ -121,10 +121,10 @@ local Slider = MainTab:CreateSlider({
 })
 
 local Slider = MainTab:CreateSlider({
-	Name = "Walkspeed",
+	Name = "Jump Power",
 	Range = {50, 200},
 	Increment = 10,
-	Suffix = "Speed",
+	Suffix = "Height",
 	CurrentValue = 50,
 	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
 	Callback = function(Value)
