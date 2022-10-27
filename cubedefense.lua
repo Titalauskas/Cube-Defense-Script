@@ -3,7 +3,7 @@ local Window = Rayfield:CreateWindow({
 
     Name = "Cube defense v1.1",
     LoadingTitle = "Cube Defense perfect op script",
-    LoadingSubtitle = "by vyjev",
+    LoadingSubtitle = "by someone",
     KeySystem = false, -- Set this to true to use our key system
     KeySettings = {
         Title = "Sirius Hub",
@@ -90,7 +90,7 @@ local Button = SETTab:CreateButton({
 local Button = MainTab:CreateButton({
 	Name = "Redeem All Codes",
 	Callback = function()
-        game:GetService("ReplicatedStorage").Events.VerifyTwitterCodaeFunction:InvokeServer("NUKELAUNHCODES")
+        game:GetService("ReplicatedStorage").Events.VerifyTwitterCodeFunction:InvokeServer("NUKELAUNHCODES")
         game:GetService("ReplicatedStorage").Events.VerifyTwitterCodeFunction:InvokeServer("IMPOOR")
         game:GetService("ReplicatedStorage").Events.VerifyTwitterCodeFunction:InvokeServer("IMPOOR2")
         game:GetService("ReplicatedStorage").Events.VerifyTwitterCodeFunction:InvokeServer("USA")
@@ -104,5 +104,30 @@ local Button = MainTab:CreateButton({
         game:GetService("ReplicatedStorage").Events.VerifyTwitterCodeFunction:InvokeServer("EXP")
         game:GetService("ReplicatedStorage").Events.VerifyTwitterCodeFunction:InvokeServer("FORT")
         game:GetService("ReplicatedStorage").Events.VerifyTwitterCodeFunction:InvokeServer("FART")
+	end,
+})
+
+-- Sliders
+local Slider = MainTab:CreateSlider({
+	Name = "Walkspeed",
+	Range = {16, 100},
+	Increment = 1,
+	Suffix = "Speed",
+	CurrentValue = 10,
+	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+	    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Value
+	end,
+})
+
+local Slider = MainTab:CreateSlider({
+	Name = "Walkspeed",
+	Range = {50, 200},
+	Increment = 10,
+	Suffix = "Speed",
+	CurrentValue = 50,
+	Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+	Callback = function(Value)
+	    game.Players.LocalPlayer.Character.Humanoid.JumpPower = Value
 	end,
 })
